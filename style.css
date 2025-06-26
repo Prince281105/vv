@@ -1,39 +1,69 @@
-/* Add to your CSS file or inside <style> tag */
-
-body {
+/* Make all content fit screen width */
+body, html {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  width: 100%;
   overflow-x: hidden;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-.container {
+/* Make images and videos scale */
+img, video {
   max-width: 100%;
-  padding: 20px;
+  height: auto;
+  display: block;
+}
+
+/* Responsive sections */
+.container, .section, .content {
+  padding: 15px;
+  width: 100%;
   box-sizing: border-box;
 }
 
-section {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+/* Responsive text */
+h1, h2, h3, p {
+  word-wrap: break-word;
+  line-height: 1.4;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+/* Buttons should scale too */
+button, a.button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  text-align: center;
+  display: inline-block;
+  box-sizing: border-box;
 }
 
+/* Fix layout issues on small screens */
 @media (max-width: 768px) {
-  h1, h2, h3 {
-    font-size: 1.5rem;
+  .row {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .section-content {
-    flex-direction: column;
-    text-align: center;
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 16px;
   }
 }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 
 *{
     box-sizing: border-box;
